@@ -3,7 +3,7 @@ import { getObjectValueByPath } from '../../../util/helpers'
 export type FilterTreeItemFunction = (item: object, search: string, textKey: string) => boolean
 
 export function filterTreeItem (item: object, search: string, textKey: string): boolean {
-  const text = getObjectValueByPath(item, textKey)
+  const text = String(getObjectValueByPath(item, textKey))
 
   return text.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) > -1
 }
